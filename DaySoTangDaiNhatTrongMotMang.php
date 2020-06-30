@@ -54,6 +54,30 @@
      {
          echo $num . " ";
      }
+
+// Advanced == cach 2 == //
+
+$a = [-1, 1, 0, 1, 2, 3, 4, 5, 7, 1];
+//$a = [1,2,3,4,5,6];
+$leng = count($a);
+$a[$leng] = null;
+$subLeng = 0;
+$start = 0;
+$tmpStart = $start;
+$end = 0;
+
+for( $i = 0; $i < $leng; $i++) {
+	if( $a[$i] > $a[$i+1]  && $i - $tmpStart > $subLeng ) {
+		 $start = $tmpStart;
+		 $subLeng = $i - $end;
+		 $end = $i;
+		 $tmpStart = $i+1;
+	}
+		
+}
+
+for( $i = $start; $i <= $end; $i++ ) {
+	echo $a[$i]. " ";
+}
    
-    
 ?>
