@@ -1,0 +1,27 @@
+<?php
+// tìm khoản cach nhỏ nhất giữa các phần tử trong mảng 
+$arr = [10, 11, 2, 4,1]; => min = 2 - 1 = 1
+function getMinDistance($arr)
+{
+    $leng = count($arr);
+    if($arr[0] > $arr[1]) {
+        $min = $arr[1];
+        $min2 = $arr[0];
+    } else {
+        $min = $arr[0];
+        $min2 = $arr[1];
+    }
+    for ($i = 2; $i < $leng; $i++) {
+        if($arr[$i] < 0) {
+            continue;
+        }
+        if ($arr[$i] < $min ) {
+            $min2 = $min;
+            $min = $arr[$i];
+
+        } else if( $arr[$i] < $min2 ) {
+            $min2 = $arr[$i];
+        }
+    }
+    return $min2 - $min;
+}
