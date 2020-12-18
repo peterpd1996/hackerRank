@@ -1,0 +1,33 @@
+<?php
+
+$arr1 = [1,4,7,9];
+$arr2 = [2,3,5,6,8];
+
+$leng1 = count($arr1);
+$leng2 = count($arr2);
+
+$start1 = 0;
+$start2 = 0;
+$mergeArr = [];
+while(($start1 < $leng1) && ($start2 < $leng2)) {
+	if($arr1[$start1] < $arr2[$start2]) {
+	   $mergeArr[] = $arr1[$start1];
+		$start1++;
+	} else {
+	$mergeArr[] = $arr2[$start2];
+		$start2++;
+	
+	}
+}
+
+for(; $start1 < $leng1; $start1++ ) {
+  $mergeArr[] = $arr1[$start1];
+}
+
+for(; $start2 < $leng2; $start2++ ) {
+  $mergeArr[] = $arr2[$start2];
+}
+
+echo "<pre>";
+var_dump($mergeArr);
+echo "</pre>";
