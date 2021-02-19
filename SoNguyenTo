@@ -1,0 +1,29 @@
+function isPrime ($n)
+{
+    // Neu n < 2 thi khong phai la SNT
+    if ($n < 2){
+        return false;
+    }       
+     
+    // Neu n = 2 la SNT
+    if ($n == 2){
+        return true;
+    }
+     
+    // Neu n la so chan thi ko phai la SNT
+    if ($n % 2 == 0){
+        return false;   
+    }
+     
+    // Lap qua cac so le, vì nếu là một số lẻ rồi thì chắc chắn nó sẽ không chia hết cho một số chẵn 
+	$end = sqrt($n);
+    for ( $i = 3; $i < $end; $i += 2){
+        if ($n % $i == 0){
+            return false;
+        }   
+    }
+     
+    return true;
+}
+
+echo isPrime(3);
