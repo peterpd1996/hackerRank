@@ -1,0 +1,16 @@
+$number = "120300200100";
+
+        $units = ['đồng', 'nghìn', 'triệu', 'tỉ'];
+        $length = strlen($number);
+        $lengthFixed = $length;
+        $pos = $length;
+        foreach ($units as $index => $unit) {
+            $lengthSub = 3;
+            $pos -= 3;
+            if ($index == 3) {
+                $lengthSub = $lengthFixed - ($index * $lengthSub);
+                $pos = 0;
+            }
+            $test[$unit] = substr($number, $pos, $lengthSub);
+        }
+        dd($test);
