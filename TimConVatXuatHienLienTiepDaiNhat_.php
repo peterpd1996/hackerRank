@@ -15,4 +15,4 @@
             $tempMax = 1;
         }
     }
-    dd($max, $value);
+    echo "$value xuat hien $max lan";
