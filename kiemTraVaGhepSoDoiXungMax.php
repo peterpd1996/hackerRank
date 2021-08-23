@@ -6,7 +6,6 @@
             dd("số không thể là số đối xứng");
         }
         $number = 0;
-        $checkFirst = 0; // kiểm tra nấu là số đầu tiên thì không * 10 nữa 
         $middle = -1; // lưu số nào xuất hiện 1 lần hay k thì ghép ở giữa nếu có  
         
         // ghép nửa đầu của số 
@@ -20,12 +19,7 @@
                 continue;
             }
             for ($j = 0; $j < $checkOddOrEven; $j++) {
-                if ($checkFirst == 0 ) {
-                    $number = $i;
-                    $checkFirst = 1;
-                } else {
-                    $number = ($number * 10) + $i;
-                }
+               $number = ($number * 10) + $i;
             }
         }
 
